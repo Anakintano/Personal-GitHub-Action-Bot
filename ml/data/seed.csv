@@ -1,0 +1,121 @@
+log,category
+ModuleNotFoundError No module named requests,dependency
+pip ERROR Could not find a version that satisfies the requirement fastapi,dependency
+npm ERR ERESOLVE unable to resolve dependency tree,dependency
+npm ERR ETARGET No matching version found for lodash,dependency
+Cannot find package webpack imported from build.mjs,dependency
+ImportError cannot import name BaseSettings from pydantic,dependency
+Maven Could not resolve dependencies for project payment-api,dependency
+Could not find artifact org.postgresql postgresql in central,dependency
+Gradle failed to resolve com.android.tools.build gradle,dependency
+Bundler could not find compatible versions for gem rack,dependency
+Composer package symfony/console requires PHP version 8.3,dependency
+cargo failed to select a version for the requirement serde,dependency
+go cannot find module providing package golang.org/x/net/http2,dependency
+NuGet NU1101 Unable to find package Newtonsoft.Json,dependency
+Yarn error incompatible module found when installing node-sass,dependency
+pip dependency resolver found conflicting requirements for urllib3,dependency
+pnpm ERR_PNPM_PEER_DEP_ISSUES unresolved peer dependencies,dependency
+Gem::LoadError You have already activated rake but Gemfile requires another version,dependency
+Poetry SolverProblemError because project depends on conflicting pandas constraints,dependency
+No matching distribution found for psycopg2 on this Python version,dependency
+pytest FAILED test_create_order expected 201 but got 500,test
+AssertionError expected total to equal 19.99 but got 0,test
+JUnit Tests run 42 Failures 1 Errors 0,test
+Maven Surefire There are test failures see surefire-reports,test
+Jest expect received value must equal expected snapshot,test
+Selenium NoSuchElementException unable to locate login button,test
+Playwright assertion timed out waiting for expect locator to be visible,test
+RSpec expected true got false in checkout_spec,test
+go test FAIL TestCalculateTax expected nonzero rate,test
+Rust test result FAILED with assertion left equals right,test
+Unit test assertion failed inventory should remain available,test
+TestNG FAILED testGuestCanBrowse NullPointerException,test
+Mocha AssertionError expected response to have status 200 but got 403,test
+Cypress AssertionError expected form to contain confirmation,test
+Vitest snapshot mismatch for rendered navigation component,test
+xUnit Assert.Equal Failure Expected active Actual suspended,test
+unittest FAIL test_invalid_email expected ValueError to be raised,test
+Kotest expected size 3 but was 4 in user service test,test
+CTest tests passed 90 percent 1 test failed,test
+PHPUnit Failed asserting that two arrays are equal,test
+Ruff F401 imported but unused in routes.py,lint/type
+flake8 E501 line too long in settings.py,lint/type
+ESLint no-unused-vars variable payload is assigned a value but never used,lint/type
+TypeScript TS2322 Type string is not assignable to type number,lint/type
+mypy error Incompatible return value type got str expected int,lint/type
+Pyright reportArgumentType cannot assign argument to parameter,lint/type
+Prettier code style issues found in user.ts,lint/type
+Black would reformat app/models.py,lint/type
+Pylint C0116 Missing function or method docstring,lint/type
+Checkstyle error Missing a Javadoc comment,lint/type
+Stylelint unexpected unknown property colr,lint/type
+golangci-lint typecheck cannot use request as context,lint/type
+ShellCheck SC2086 Double quote to prevent globbing,lint/type
+Clippy needless_return warning promoted to error,lint/type
+Spotless formatting violations run spotlessApply to fix,lint/type
+RuboCop Layout/IndentationWidth use two spaces for indentation,lint/type
+SwiftLint trailing_whitespace violation in Profile.swift,lint/type
+ktlint standard no-wildcard-imports violated,lint/type
+TS2345 Argument of type undefined is not assignable to parameter type string,lint/type
+isort ERROR imports are incorrectly sorted or formatted,lint/type
+gcc fatal error stdio.h No such file or directory compilation terminated,build/compile
+javac error cannot find symbol class PaymentService,build/compile
+Gradle task compileJava FAILED compilation error,build/compile
+Maven compiler plugin Compilation failure invalid source release,build/compile
+Rust error E0425 cannot find value in this scope,build/compile
+CMake configure error target links to an undefined target,build/compile
+ninja build stopped subcommand failed,build/compile
+ld undefined reference to initialize_client,build/compile
+MSBuild error CS0246 type or namespace name could not be found,build/compile
+webpack compilation failed Module parse failed unexpected token,build/compile
+Rollup build error Unexpected character when parsing generated source,build/compile
+Docker failed to solve failed to compute cache key COPY source not found,build/compile
+Go compiler syntax error unexpected return expected closing brace,build/compile
+Swift compiler error cannot find UserView in scope,build/compile
+make Error 2 while building target frontend.bundle,build/compile
+clang error expected semicolon after declaration,build/compile
+Kotlin compilation error unresolved reference in Main.kt,build/compile
+esbuild Transform failed with syntax error expected identifier,build/compile
+Gradle Android resource linking failed AAPT error attribute not found,build/compile
+dotnet publish failed NETSDK1045 current SDK does not support targeting,build/compile
+Missing required secret DEPLOY_KEY,config-secret
+KeyError DATABASE_URL environment variable is required,config-secret
+ERROR Authentication failed invalid API key provided,config-secret
+Azure login failed no credentials found for service principal,config-secret
+Vault permission denied reading secret data deploy,config-secret
+GCP DefaultCredentialsError could not automatically determine credentials,config-secret
+AWS Unable to locate credentials configure access key before deploy,config-secret
+docker login unauthorized incorrect username or password,config-secret
+403 Resource not accessible by integration check GitHub token permissions,config-secret
+Permission denied publickey while deploying with SSH,config-secret
+Required configuration file deployment.yaml does not exist,config-secret
+Invalid value for environment variable DEPLOY_REGION,config-secret
+Terraform error no value for required variable project_id,config-secret
+Kubernetes secret db-password not found,config-secret
+OIDC audience does not match configured workload identity provider,config-secret
+GitHub Actions secret named RELEASE_TOKEN is empty,config-secret
+No value supplied for required configuration key cluster_name,config-secret
+YAML configuration error did not find expected key in deploy config,config-secret
+Gradle signing key password missing from environment,config-secret
+Deployment failed because the service account lacks IAM permission,config-secret
+Process completed with exit code 137 killed by kernel OOM,infra-flaky
+Container terminated reason OOMKilled memory limit exceeded,infra-flaky
+Runner lost communication with GitHub Actions service,infra-flaky
+Network connection timed out while downloading build inputs,infra-flaky
+Temporary failure in name resolution for registry host,infra-flaky
+Runner Error no space left on device while writing temp files,infra-flaky
+HTTP 503 Service Unavailable from artifact storage,infra-flaky
+Connection reset by peer during upload retry later,infra-flaky
+SocketTimeoutException Read timed out waiting for runner service,infra-flaky
+Job cancelled because hosted runner shut down unexpectedly,infra-flaky
+Pod evicted node was low on ephemeral-storage,infra-flaky
+Unable to connect to Docker daemon connection refused,infra-flaky
+HTTP 502 Bad Gateway pulling base image from registry,infra-flaky
+Connection pool exhausted waiting for database during CI,infra-flaky
+TLS handshake timeout pulling container image,infra-flaky
+Agent went offline during Jenkins execution,infra-flaky
+Transient DNS lookup failed EAI_AGAIN,infra-flaky
+Artifact upload interrupted by network unreachable,infra-flaky
+Runner exceeded job deadline due to unavailable executor,infra-flaky
+Failed to acquire hosted agent pool capacity exhausted,infra-flaky

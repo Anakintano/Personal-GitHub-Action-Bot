@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ci-failure-explainer
+  namespace: ci-failure-explainer
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: ci-failure-explainer
+  template:
+    metadata:
+      labels:
+        app: ci-failure-explainer
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: app
+          image: ci-failure-explainer:local
+          ports:
+            - name: http
+              containerPort: 8000
+          env:
+            - name: SQLITE_PATH
+              value: /data/explainer.sqlite
+            - name: LLM_MODEL
+              value: nvidia/nemotron-3.5-bolt-e4b
+            - name: DAILY_ANALYSIS_LIMIT
+              value: "20"
+          envFrom:
+            - secretRef:
+                name: ci-failure-explainer
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 10
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              memory: 512Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: [ALL]
+          volumeMounts:
+            - name: sqlite
+              mountPath: /data
+      volumes:
+        - name: sqlite
+          persistentVolumeClaim:
+            claimName: sqlite

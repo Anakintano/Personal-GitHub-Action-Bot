@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: ci-failure-explainer
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["explainer:8000"]

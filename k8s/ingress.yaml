@@ -1,0 +1,37 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: ci-failure-explainer
+  namespace: ci-failure-explainer
+spec:
+  domains:
+    - hooks.example.com
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ci-failure-explainer
+  namespace: ci-failure-explainer
+  annotations:
+    kubernetes.io/ingress.class: gce
+    kubernetes.io/ingress.global-static-ip-name: ci-explainer-ingress
+    networking.gke.io/managed-certificates: ci-failure-explainer
+spec:
+  rules:
+    - host: hooks.example.com
+      http:
+        paths:
+          - path: /github
+            pathType: Exact
+            backend:
+              service:
+                name: ci-failure-explainer
+                port:
+                  name: http
+          - path: /jenkins
+            pathType: Exact
+            backend:
+              service:
+                name: ci-failure-explainer
+                port:
+                  name: http

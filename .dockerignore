@@ -1,0 +1,9 @@
+**
+!/*.py
+!/requirements.txt
+!/rules.yaml
+!/ml/
+!/ml/*.py
+!/ml/model.joblib
+!/ml/data/
+!/ml/data/seed.csv

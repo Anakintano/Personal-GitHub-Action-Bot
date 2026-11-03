@@ -1,0 +1,9 @@
+fastapi==0.162.0
+httpx==0.28.1
+joblib==1.5.3
+prometheus-client==0.26.0
+pydantic==2.13.4
+PyJWT[crypto]==2.15.1
+PyYAML==6.0.3
+scikit-learn==1.9.0
+uvicorn==0.54.0

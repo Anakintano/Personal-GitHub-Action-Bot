@@ -1,0 +1,3 @@
+dependency: 'ModuleNotFoundError|Cannot find module|Could not resolve dependencies'
+oom: '\bexit code 137\b|\bOOMKilled\b'
+config-secret: 'missing (?:required )?(?:secret|environment variable)|secret .+ (?:is not set|is missing)'
