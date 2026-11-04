@@ -18,6 +18,8 @@ On [RepLift PR #2](https://github.com/Anakintano/RepLift/pull/2), a deliberate T
 | --- | --- | --- |
 | [![Failed GitHub Actions run](demo-screenshots/01-failed-ci.png)](demo-screenshots/01-failed-ci.png) | [![Bot comment with compiler evidence and fix](demo-screenshots/02-bot-diagnosis.png)](demo-screenshots/02-bot-diagnosis.png) | [![Original comment marked fixed](demo-screenshots/03-fixed-comment.png)](demo-screenshots/03-fixed-comment.png) |
 
+[Live Grafana dashboard](demo-screenshots/08-grafana-live.png) · [Webhook deliveries and retries](demo-screenshots/05-webhook-deliveries.png) · [Invalid signature rejected](demo-screenshots/06-signature-rejected.png) · [Bot declines to guess](demo-screenshots/07-unsure-comment.png) · [Green project pipeline](demo-screenshots/04-project-ci.png) · [Compose services running in CI](demo-screenshots/09-compose-services.png)
+
 ## DevOps stack
 
 | Stage | Stack |
@@ -27,7 +29,7 @@ On [RepLift PR #2](https://github.com/Anakintano/RepLift/pull/2), a deliberate T
 | Local observability | Prometheus metrics and a Grafana dashboard in Docker Compose |
 | Cloud deployment | Terraform, GKE Autopilot, Kubernetes, Artifact Registry, and GCS state |
 
-The GitHub webhook ran through a temporary HTTPS tunnel, and the NVIDIA diagnosis was verified live. The screenshots show that original run, before the classifier and comment formatting refinements. The local Compose configuration and metrics output were checked. The Grafana dashboard and the Jenkins and GKE paths have yet to be verified live.
+The PR screenshots show the demo service before it loaded the classifier and comment formatting refinements. Monitoring was verified locally with Prometheus and Grafana scraping the service during two additional live RepLift failures. GitHub Actions separately verified that the three Compose services start together. Jenkins and GKE have yet to be verified live.
 
 The classifier scored **73.3% (22/30)** on a synthetic holdout. See the [confusion matrix and setup guide](SETUP.md#classifier-evaluation) or the [GKE runbook](infra/README.md).
 
