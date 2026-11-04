@@ -1,5 +1,11 @@
 # Deploy to GKE
 
+## Budget and teardown
+
+Estimate the demo in the [Google Cloud Pricing Calculator](https://cloud.google.com/products/calculator) using your region and planned runtime. Include the Autopilot cluster and one pod (requested 0.25 vCPU and 0.5 GiB RAM, subject to Autopilot adjustments), the external Application Load Balancer, the 1 GiB persistent disk, the external IP, image storage, and the state bucket. Charges depend on region, usage, and billing-account credits.
+
+After the demo, disable the webhook and back up any SQLite data you need. Remove the app namespace and wait for GKE to remove the load balancer and disk. For the Terraform stack, set `deletion_protection = false` in `infra/gcp/main.tf`, review and apply that change, then review a destroy plan before running `terraform destroy`. Keep the remote state bucket until the stack is destroyed. Its separate bootstrap intentionally protects the bucket from accidental deletion.
+
 Use Bash, Terraform, Google Cloud CLI, `gke-gcloud-auth-plugin`, and `kubectl`. You need a GCP project with billing enabled, the numeric ID of the GitHub repository that hosts this service, and a DNS name you control. The Terraform and Kubernetes apply commands below create billable infrastructure and are for the operator to run after reviewing the plan.
 
 ## Provision infrastructure

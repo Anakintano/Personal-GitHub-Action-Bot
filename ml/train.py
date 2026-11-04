@@ -30,7 +30,9 @@ def main() -> None:
     train_x, held_out_x, train_y, held_out_y = train_test_split(
         logs, labels, test_size=0.25, stratify=labels, random_state=42
     )
-    model = make_pipeline(TfidfVectorizer(ngram_range=(1, 2)), LogisticRegression())
+    model = make_pipeline(
+        TfidfVectorizer(ngram_range=(1, 2)), LogisticRegression(C=10, max_iter=1000)
+    )
     model.fit(train_x, train_y)
     predicted = model.predict(held_out_x)
     accuracy = accuracy_score(held_out_y, predicted)

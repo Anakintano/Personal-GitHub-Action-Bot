@@ -24,11 +24,11 @@ On [RepLift PR #2](https://github.com/Anakintano/RepLift/pull/2), a deliberate T
 | --- | --- |
 | Source and delivery | GitHub App and Actions, plus a Jenkins intake endpoint and Jenkinsfile |
 | Service and local runtime | Python, FastAPI, SQLite, Docker and Compose |
-| Observability | Prometheus metrics and a provisioned Grafana dashboard |
+| Local observability | Prometheus metrics and a Grafana dashboard in Docker Compose |
 | Cloud deployment | Terraform, GKE Autopilot, Kubernetes, Artifact Registry, and GCS state |
 
-GitHub Actions and NVIDIA were verified live through a temporary HTTPS tunnel. Jenkins and GKE are included for deployment and have yet to be verified live.
+The GitHub webhook ran through a temporary HTTPS tunnel, and the NVIDIA diagnosis was verified live. The screenshots show that original run, before the classifier and comment formatting refinements. The local Compose configuration and metrics output were checked. The Grafana dashboard and the Jenkins and GKE paths have yet to be verified live.
 
-Start with the [setup guide](SETUP.md) or the [GKE runbook](infra/README.md). The setup guide includes the classifier evaluation and credits the tutorial that inspired the project.
+The classifier scored **73.3% (22/30)** on a synthetic holdout. See the [confusion matrix and setup guide](SETUP.md#classifier-evaluation) or the [GKE runbook](infra/README.md).
 
 [MIT License](LICENSE)

@@ -154,7 +154,11 @@ def analyze(steps: list[tuple[str, str]]) -> Analysis:
         (name for name, pattern in rules().items() if pattern.search(trimmed)), None
     )
     prediction = predict(trimmed)
-    footer = f"\n\n_Classifier: {prediction[0]} ({prediction[1]:.0%})_"
+    footer = (
+        f"\n\n_Classifier: {prediction[0]} ({prediction[1]:.0%})_"
+        if prediction[1] >= 0.5
+        else ""
+    )
     api_key = os.getenv("NVIDIA_API_KEY")
     if not api_key:
         ANALYSIS_ERRORS.inc()
